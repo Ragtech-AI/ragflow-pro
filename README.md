@@ -25,7 +25,7 @@ RAGFlow Pro is an enterprise-grade Retrieval-Augmented Generation system that co
 ## Getting Started
 ```bash
 # Clone the repository
-git clone https://github.com/ramansrivastava/ragflow-pro.git
+git clone https://github.com/Ragtech-AI/ragflow-pro.git
 cd ragflow-pro
 
 # Install dependencies

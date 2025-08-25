@@ -4,7 +4,7 @@ Welcome to RAGTech Solutions! This guide will help you get started as a contribu
 
 ## Development Workflow
 
-1. **Pick an Issue**: Browse [GitHub Issues](https://github.com/ramansrivastava/ragflow-pro/issues) and pick one that matches your skill level
+1. **Pick an Issue**: Browse [GitHub Issues](https://github.com/Ragtech-AI/ragflow-pro/issues) and pick one that matches your skill level
 2. **Create Branch**: `git checkout -b feature/issue-#-short-description`
 3. **Develop**: Implement your solution following our coding standards
 4. **Test**: Write tests and ensure all tests pass
@@ -22,7 +22,7 @@ Welcome to RAGTech Solutions! This guide will help you get started as a contribu
 ### Setup Development Environment
 ```bash
 # Clone and setup backend
-git clone https://github.com/ramansrivastava/ragflow-pro.git
+git clone https://github.com/Ragtech-AI/ragflow-pro.git
 cd ragflow-pro
 python -m venv venv
 source venv/bin/activate  # or `venv\Scripts\activate` on Windows
