@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from backend.app.api.routes import documents
 app = FastAPI(title="RAGFlow Pro API", version="1.0.0")
 
 app.add_middleware(
@@ -18,3 +18,4 @@ def read_root():
 @app.get("/health")
 def health_check():
     return {"status": "healthy"}
+app.include_router(documents.router, prefix="/api/documents", tags=["documents"])
