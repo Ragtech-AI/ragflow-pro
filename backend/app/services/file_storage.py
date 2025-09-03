@@ -1,4 +1,5 @@
 from backend.app.core.config import ALLOWED_EXTENSIONS, ALLOWED_MIME_TYPES, MAX_FILE, UPLOAD_FOLDER
+from backend.app.services.document_processor import extract_metadata, extract_text, preprocess_text, chunk_text
 from pathlib import Path
 import uuid
 from datetime import datetime
@@ -27,5 +28,24 @@ def save_uploaded_file(file: UploadFile, file_id: str) -> Path:
           "filename": file.filename,
           "content_type": file.content_type,
           "upload_time": datetime.utcnow().isoformat(),
-      }
-    return file_path, metadata
+        }
+        try:
+            processing_results = document_processing_pipeline(file_path)
+            metadata.update({"metadata": processing_results.get("metadata", {})})
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Error processing document: {str(e)}")
+        return file_path, metadata
+        
+
+def document_processing_pipeline(file_path: Path):
+    text = extract_text(str(file_path))
+    cleaned_text = preprocess_text(text)
+    chunks = chunk_text(cleaned_text)
+    metadata = extract_metadata(str(file_path))
+    return {
+        "text": text,
+        "cleaned_text": cleaned_text,
+        "chunks": chunks,
+        "metadata": metadata
+    }
+
