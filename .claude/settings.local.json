@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git log:*)",
+      "Read(/D:\\ragflow-pro/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
