@@ -8,3 +8,9 @@ ALLOWED_MIME_TYPES = {
     "text/plain",
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
 }
+
+# vector db config
+VECTOR_DB_DIR = Path("./chroma_data")
+COLLECTION_NAME = "ragflow_documents"
+DISTANCE_METRIC = "cosine"
+EMBEDDING_DIMENSIONS = 384

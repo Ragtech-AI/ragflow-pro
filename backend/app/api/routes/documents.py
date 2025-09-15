@@ -9,3 +9,4 @@ async def upload_file(file: UploadFile = File(...)):
     file_id = generate_file_id()
     file_path, metadata = save_uploaded_file(file, file_id)
     return metadata
+
